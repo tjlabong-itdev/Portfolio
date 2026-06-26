@@ -15,13 +15,17 @@ body{
 }
 
 header{
-    padding:25px 8%;
+    padding:0 8%;
 }
 
 nav{
     display:flex;
     justify-content:space-between;
     align-items:center;
+
+    padding:20px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.15);
 }
 
 .logo{
@@ -32,13 +36,25 @@ nav{
 
 nav ul{
     display:flex;
-    gap:30px;
+    gap:35px;
     list-style:none;
+    align-items:center;
 }
 
-nav a{
+nav ul li a{
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
     color:#fff;
     text-decoration:none;
+
+    font-size:.95rem;
+    font-weight:500;
+
+    transition:.3s ease;
 }
 
 .hero{
@@ -121,9 +137,24 @@ nav a{
 }
 
 section{
-    padding:100px 8%;
+    padding:70px 8%;
 }
 
+.section-title{
+    margin-bottom:25px;
+}
+
+.about{
+    padding-top:30px;
+}
+
+.skills{
+    padding-top:30px;
+}
+
+.projects{
+    padding-top:30px;
+}
 .about-card,
 .skill-card,
 .project-card{
@@ -222,4 +253,177 @@ section{
     color:#d4af37;
     text-decoration:none;
     font-weight:600;
+}
+
+nav ul li a::after{
+    content:'';
+
+    position:absolute;
+
+    left:50%;
+    bottom:-8px;
+
+    width:0;
+    height:2px;
+
+    background:#d4af37;
+
+    transform:translateX(-50%);
+
+    transition:.3s ease;
+}
+
+nav ul li a:hover{
+    color:#d4af37;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+nav ul li a i{
+    transition:.3s ease;
+}
+
+nav ul li a:hover i{
+    transform:translateY(-2px);
+}
+
+.education{
+    padding:30px 8% 70px;
+}
+
+.education-subtitle{
+    color:#b3b3b3;
+    margin-top:10px;
+    margin-bottom:20px;
+}
+
+.education-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.education-grid .college{
+    grid-column:1 / span 2;
+}
+
+.education-card{
+    position:relative;
+
+    min-height:280px;
+
+    border:1px solid rgba(255,255,255,.12);
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        #111827,
+        #0f172a
+    );
+
+    transition:.4s ease;
+}
+
+.education-card:hover{
+    transform:translateY(-8px);
+
+    border-color:#d4af37;
+
+    box-shadow:
+    0 20px 50px rgba(212,175,55,.15);
+}
+
+.education-content{
+    position:absolute;
+
+    left:40px;
+    bottom:40px;
+
+    z-index:2;
+}
+
+.education-content h3{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+.education-content p{
+    font-size:1.2rem;
+    color:#e5e5e5;
+}
+
+.education-content span{
+    display:block;
+
+    margin-top:10px;
+
+    color:#d4af37;
+
+    font-weight:600;
+}
+
+.education-content small{
+    display:block;
+
+    margin-top:10px;
+
+    color:#b3b3b3;
+
+    font-size:.95rem;
+}
+
+.education-overlay{
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.75),
+        rgba(0,0,0,.25)
+    );
+
+    z-index:1;
+}
+
+.college{
+    background-image:url("images/STI LOGO.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.highschool{
+    background-image:url("images/PNHS_LOGO.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.elementary{
+    background-image:url("images/JSES_LOGO.png");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+.section-divider{
+    width:84%;
+    height:1px;
+    background:rgba(255,255,255,.12);
+    margin:20px auto;
+}
+
+.about{
+    padding-bottom:30px;
+}
+
+.education{
+    padding-top:30px;
 }
