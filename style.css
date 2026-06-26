@@ -124,9 +124,22 @@ section{
     padding:100px 8%;
 }
 
-.section-title{
-    font-size:3rem;
-    margin-bottom:40px;
+.about-card,
+.skill-card,
+.project-card{
+    background:#141414;
+    border:1px solid #262626;
+    border-radius:20px;
+    padding:25px;
+    transition:all .3s ease;
+}
+
+.about-card:hover,
+.skill-card:hover,
+.project-card:hover{
+    transform:translateY(-8px);
+    border-color:#d4af37;
+    box-shadow:0 15px 40px rgba(212,175,55,.15);
 }
 
 .about-grid,
@@ -174,9 +187,17 @@ section{
 .project-tech span{
     background:#1e1e1e;
     border:1px solid #333;
-    padding:8px 14px;
+    padding:10px 18px;
     border-radius:999px;
     color:#d4af37;
+    font-size:.95rem;
+    font-weight:500;
+    transition:.3s;
+}
+
+.tags span:hover,
+.project-tech span:hover{
+    border-color:#d4af37;
 }
 
 .project-card img{
