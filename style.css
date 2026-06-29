@@ -208,10 +208,12 @@ section{
 
 .skills-subtitle{
     color:#b3b3b3;
-    margin-top:-10px;
-    margin-bottom:40px;
-    max-width:700px;
+
+    margin-top:8px;
+    margin-bottom:35px;
+
     line-height:1.8;
+    max-width:700px;
 }
 
 .skills-container{
@@ -277,17 +279,6 @@ section{
 
     transform:translateY(-3px);
 }       
-
-.section-title{
-    display:flex;
-    align-items:center;
-    gap:12px;
-
-    font-size:2.2rem;
-    font-weight:700;
-
-    margin-bottom:25px;
-}
 
 .section-title i{
     color:#d4af37;
@@ -537,14 +528,127 @@ nav ul li a:hover i{
 .section-divider{
     width:84%;
     height:1px;
-    background:rgba(255,255,255,.12);
-    margin:20px auto;
+    margin:0 auto;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,.15),
+        transparent
+    );
 }
 
-.about{
-    padding-bottom:30px;
+.about,
+.education,
+.skills,
+.projects{
+    padding-top:55px;
+    padding-bottom:70px;
 }
 
-.education{
-    padding-top:30px;
+.skill-slider{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+}
+
+.skill-track{
+    display:flex;
+    width:max-content;
+
+    animation:skillScroll 22s linear infinite;
+    animation-play-state:paused;
+}
+.skill-item{
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    flex-shrink:0;
+
+    margin-right:18px;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    background:#161616;
+
+    border:1px solid #2b2b2b;
+
+    transition:.35s;
+}
+
+.skill-item img{
+
+    width:34px;
+    height:34px;
+
+    object-fit:contain;
+}
+
+.skill-item span{
+
+    color:#f5f5f5;
+
+    font-weight:500;
+
+    letter-spacing:.3px;
+}
+
+/* Start animation when hovering anywhere on the row */
+.skill-row:hover .skill-track{
+    animation-play-state:running;
+}
+@keyframes skillScroll{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+.skill-slider::before,
+.skill-slider::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    width:90px;
+
+    height:100%;
+
+    z-index:10;
+
+    pointer-events:none;
+}
+
+.skill-slider::before{
+
+    left:0;
+
+    background:linear-gradient(
+        to right,
+        #0b0b0b,
+        transparent
+    );
+}
+
+.skill-slider::before{
+
+    left:0;
+
+    background:linear-gradient(
+        to right,
+        #0b0b0b,
+        transparent
+    );
 }
