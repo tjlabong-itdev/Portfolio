@@ -547,9 +547,29 @@ nav ul li a:hover i{
 }
 
 .skill-slider{
+
     position:relative;
+
     width:100%;
+
     overflow:hidden;
+
+    /* Smooth fading edges */
+    -webkit-mask-image:linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
+
+    mask-image:linear-gradient(
+        to right,
+        transparent,
+        black 10%,
+        black 90%,
+        transparent
+    );
 }
 
 .skill-track{
@@ -563,21 +583,31 @@ nav ul li a:hover i{
 
     display:flex;
     align-items:center;
+    justify-content:center;
     gap:12px;
 
     flex-shrink:0;
 
-    margin-right:18px;
+    margin-right:28px;
 
-    padding:12px 20px;
+    min-width:170px;
+    height:58px;
+
+    padding:0 22px;
 
     border-radius:999px;
 
-    background:#161616;
+    background:#141414;
 
-    border:1px solid #2b2b2b;
+    border:1px solid rgba(255,255,255,.08);
 
-    transition:.35s;
+    box-shadow:0 0 18px rgba(255,255,255,.02);
+
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        background .35s ease,
+        box-shadow .35s ease;
 }
 
 .skill-item img{
@@ -597,6 +627,8 @@ nav ul li a:hover i{
     letter-spacing:.3px;
 }
 
+ 
+
 /* Start animation when hovering anywhere on the row */
 .skill-row:hover .skill-track{
     animation-play-state:running;
@@ -613,42 +645,3 @@ nav ul li a:hover i{
 
 }
 
-.skill-slider::before,
-.skill-slider::after{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    width:90px;
-
-    height:100%;
-
-    z-index:10;
-
-    pointer-events:none;
-}
-
-.skill-slider::before{
-
-    left:0;
-
-    background:linear-gradient(
-        to right,
-        #0b0b0b,
-        transparent
-    );
-}
-
-.skill-slider::before{
-
-    left:0;
-
-    background:linear-gradient(
-        to right,
-        #0b0b0b,
-        transparent
-    );
-}
