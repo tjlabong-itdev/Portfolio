@@ -286,12 +286,26 @@ section{
 }
 
 .about-grid,
-.skills-grid,
-.projects-grid{
+.skills-grid{
     display:grid;
     gap:25px;
 }
+.projects-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:30px;
+    align-items:stretch;
+}
+.project-card:hover{
+    transform:translateY(-8px) scale(1.02);
 
+    border-color:#d4af37;
+
+    box-shadow:
+        0 0 15px rgba(212,175,55,.20),
+        0 0 30px rgba(212,175,55,.15),
+        0 15px 40px rgba(0,0,0,.45);
+}
 .about-grid{
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 }
@@ -305,12 +319,36 @@ section{
 }
 
 .about-card,
-.skill-card,
-.project-card{
+.skill-card{
     background:#141414;
     border:1px solid #262626;
     border-radius:20px;
     padding:25px;
+}
+
+
+.about-card,
+.skill-card{
+    background:#141414;
+    border:1px solid #262626;
+    border-radius:20px;
+    padding:25px;
+}
+
+.project-card{
+    background:#141414;
+    border:1px solid #262626;
+    border-radius:20px;
+    padding:20px;
+
+    display:flex;
+    flex-direction:column;
+
+    height:100%;
+
+    transition:.35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
 }
 
 .about-card p{
