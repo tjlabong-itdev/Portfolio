@@ -1,39 +1,93 @@
+const safetyImages = [
+    "safety first/SF1.jpg",
+    "safety first/SF2.jpg",
+    "safety first/SF3.jpg",
+    "safety first/SF4.jpg",
+    "safety first/SF5.jpg",
+    "safety first/SF6.jpg",
+    "safety first/SF7.jpg",
+    "safety first/SF8.jpg",
+    "safety first/SF9.jpg",
+    "safety first/SF10.jpg",
+];
+
+const equipmentImages = [
+    "equipment mngt/EMS1.png",
+    "equipment mngt/EMS2.png",
+    "equipment mngt/EMS3.png",
+    "equipment mngt/EMS4.png",
+    "equipment mngt/EMS5.png",
+    "equipment mngt/EMS6.png",
+    "equipment mngt/EMS7.png",
+    "equipment mngt/EMS8.png",
+    "equipment mngt/EMS9.png",
+    "equipment mngt/EMS10.png",
+];
+
+let currentImage = 0;
+let currentImages = [];
+
 const modal = document.getElementById("projectModal");
 const details = document.getElementById("projectDetails");
 
 function openProject(projectName) {
-if(projectName === "safety"){
+    if (projectName === "safety") {
+        currentImages = safetyImages;
+        currentImage = 0;
 
-details.innerHTML = `
+        details.innerHTML = `
 
 <div class="modal-gallery">
 
-    <img src="safety first/SF1.jpg" class="active">
+    <button class="carousel-btn prev" onclick="prevImage(event)">
+
+        <i class="fa-solid fa-chevron-left"></i>
+
+    </button>
+
+    <img
+        id="carouselImage"
+        src="safety first/SF1.jpg"
+        alt="Safety First">
+
+    <button class="carousel-btn next" onclick="nextImage(event)">
+
+        <i class="fa-solid fa-chevron-right"></i>
+
+    </button>
 
 </div>
 
-<div class="modal-dots">
+<div class="carousel-dots">
 
-    <span class="active"></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
 
 </div>
 
 
-<div class="modal-header">
+<div class="project-title-row">
 
     <div>
 
-        <h2>"Safety First" Adventure: An Educational Game for Teaching Safety Rules</h2>
+        <h2>
+            "Safety First" Adventure:
+            An Educational Game for Teaching Safety Rules
+        </h2>
 
         <div class="modal-tags">
 
             <span>Educational Game</span>
-            <span>Web-Based Game</span>
-            <span>Disaster Risk Reduction</span>
+            <span>Web-Based</span>
+            <span>DRRM</span>
             <span>Road Safety</span>
             <span>Gamification</span>
 
@@ -45,15 +99,17 @@ details.innerHTML = `
             class="project-link">
 
             <i class="fa-solid fa-link"></i>
-            Project Link
+            Live Demo
 
         </a>
 
     </div>
 
-    <span class="project-year">
+    <div class="project-year">
+
         2025
-    </span>
+
+    </div>
 
 </div>
 
@@ -61,7 +117,10 @@ details.innerHTML = `
 
 <div class="project-section">
 
-    <h3>Introduction</h3>
+    <h3>
+    <i class="fa-solid fa-book-open"></i>
+    Introduction
+</h3>
 
     <p>
 
@@ -74,9 +133,12 @@ details.innerHTML = `
 
 <div class="project-section">
 
-<h3>Objectives</h3>
+<h3>
+    <i class="fa-solid fa-bullseye"></i>
+    Objectives
+</h3>
 
-<ul>
+<ul class="objective-list">
 
 <li>Improve students' awareness of Disaster Risk Reduction and Management (DRRM).</li>
 
@@ -95,9 +157,12 @@ details.innerHTML = `
 
 <div class="project-section">
 
-<h3>Features</h3>
+<h3>
+    <i class="fa-solid fa-star"></i>
+    Features
+</h3>
 
-<ul>
+<ul class="feature-list">
 
 <li>User Registration and Secure Login</li>
 
@@ -124,70 +189,100 @@ details.innerHTML = `
 
 <div class="project-section">
 
-<h3>Tech Stack</h3>
+<h3>
+    <i class="fa-solid fa-code"></i>
+    Tech Stack
+</h3>
 
-<div class="stack-grid">
-
-<div>
+<div class="stack-group">
 
 <h4>Programming Languages</h4>
 
-<ul>
+<div class="stack-list">
 
-<li>C#</li>
+<div class="stack-item">
+<img src="logo/csharp.svg">
+<span>C#</span>
+</div>
 
-<li>HTML5</li>
+<div class="stack-item">
+<img src="logo/html.svg">
+<span>HTML5</span>
+</div>
 
-<li>CSS3</li>
+<div class="stack-item">
+<img src="logo/css.svg">
+<span>CSS3</span>
+</div>
 
-<li>JavaScript</li>
+<div class="stack-item">
+<img src="logo/javascript.svg">
+<span>JavaScript</span>
+</div>
 
-</ul>
+</div>
 
 </div>
 
 
-<div>
+<div class="stack-group">
 
 <h4>Game Engine</h4>
 
-<ul>
+<div class="stack-list">
 
-<li>Unity</li>
+<div class="stack-item">
+<img src="logo/unity.svg">
+<span>Unity</span>
+</div>
 
-</ul>
+</div>
 
 </div>
 
 
-<div>
+<div class="stack-group">
 
 <h4>Database</h4>
 
-<ul>
+<div class="stack-list">
 
-<li>Firebase</li>
+<div class="stack-item">
+<img src="logo/firebase.svg">
+<span>Firebase</span>
+</div>
 
-</ul>
+<div class="stack-item">
+<img src="logo/playfab.svg">
+<span>PlayFab</span>
+</div>
 
 </div>
 
+</div>
 
-<div>
+<div class="stack-group">
 
 <h4>Tools & Platforms</h4>
 
-<ul>
+<div class="stack-list">
 
-<li>Visual Studio Code</li>
+<div class="stack-item">
+<img src="logo/vscode.svg">
+<span>Visual Studio Code</span>
+</div>
 
-<li>Figma</li>
+<div class="stack-item">
+<img src="logo/figma.svg">
+<span>Figma</span>
+</div>
 
-<li>PlayFab</li>
+<div class="stack-item">
+<img src="logo/playfab.svg">
+<span>PlayFab</span>
+</div>
 
-<li>itch.io</li>
-
-</ul>
+</div>
 
 </div>
 
@@ -196,31 +291,47 @@ details.innerHTML = `
 </div>
 
 `;
+    }
 
-}
+    if (projectName === "equipment") {
+        currentImages = equipmentImages;
+        currentImage = 0;
 
-if(projectName === "equipment"){
-
-details.innerHTML = `
+        details.innerHTML = `
 
 <div class="modal-gallery">
 
-    <img src="equipment mngt/EMS1.png" class="active">
+    <button class="carousel-btn prev" onclick="prevImage(event)">
+        <i class="fa-solid fa-chevron-left"></i>
+    </button>
+
+    <img
+        id="carouselImage"
+        src="equipment mngt/EMS1.png"
+        alt="Equipment Management">
+
+    <button class="carousel-btn next" onclick="nextImage(event)">
+        <i class="fa-solid fa-chevron-right"></i>
+    </button>
 
 </div>
 
-<div class="modal-dots">
+<div class="carousel-dots">
 
-    <span class="active"></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
 
 </div>
 
-
-<div class="modal-header">
+<div class="project-title-row">
 
     <div>
 
@@ -236,19 +347,10 @@ details.innerHTML = `
 
         </div>
 
-        <a
-            href="#"
-            class="project-link">
-
-            <i class="fa-solid fa-link"></i>
-            Project Link
-
-        </a>
-
     </div>
 
     <span class="project-year">
-        2025
+        2026
     </span>
 
 </div>
@@ -257,7 +359,10 @@ details.innerHTML = `
 
 <div class="project-section">
 
-    <h3>Introduction</h3>
+    <h3>
+    <i class="fa-solid fa-book-open"></i>
+    Introduction
+</h3>
 
     <p>
 
@@ -270,9 +375,12 @@ details.innerHTML = `
 
 <div class="project-section">
 
-<h3>Objectives</h3>
+<h3>
+    <i class="fa-solid fa-bullseye"></i>
+    Objectives
+</h3>
 
-<ul>
+<ul class="objective-list">
 
 <li>Digitize the equipment inventory management process.</li>
 
@@ -291,9 +399,12 @@ details.innerHTML = `
 
 <div class="project-section">
 
-<h3>Features</h3>
+<h3>
+    <i class="fa-solid fa-star"></i>
+    Features
+</h3>
 
-<ul>
+<ul class="feature-list">
 
 <li>Secure User Login and Authentication</li>
 
@@ -322,68 +433,91 @@ details.innerHTML = `
 
 <div class="project-section">
 
-<h3>Tech Stack</h3>
+<h3>
+    <i class="fa-solid fa-code"></i>
+    Tech Stack
+</h3>
 
-<div class="stack-grid">
-
-<div>
+<div class="stack-group">
 
 <h4>Programming Languages</h4>
 
-<ul>
+<div class="stack-list">
 
-<li>HTML5</li>
+<div class="stack-item">
+<img src="logo/html.svg">
+<span>HTML5</span>
+</div>
 
-<li>CSS3</li>
+<div class="stack-item">
+<img src="logo/css.svg">
+<span>CSS3</span>
+</div>
 
-<li>JavaScript</li>
+<div class="stack-item">
+<img src="logo/javascript.svg">
+<span>JavaScript</span>
+</div>
 
-<li>PHP</li>
-
-</ul>
+<div class="stack-item">
+<img src="logo/php.svg">
+<span>PHP</span>
+</div>
 
 </div>
 
+</div>
 
-<div>
+<div class="stack-group">
 
 <h4>Database</h4>
 
-<ul>
+<div class="stack-list">
 
-<li>MySQL</li>
-
-</ul>
+<div class="stack-item">
+<img src="logo/mysql.svg">
+<span>MySQL</span>
+</div>
 
 </div>
 
+</div>
 
-<div>
+<div class="stack-group">
 
-<h4>Frameworks</h4>
+<h4>Framework</h4>
 
-<ul>
+<div class="stack-list">
 
-<li>Bootstrap</li>
-
-</ul>
+<div class="stack-item">
+<img src="logo/bootstrap.svg">
+<span>Bootstrap</span>
+</div>
 
 </div>
 
+</div>
 
-<div>
+<div class="stack-group">
 
 <h4>Development Tools</h4>
 
-<ul>
+<div class="stack-list">
 
-<li>Visual Studio Code</li>
+<div class="stack-item">
+<img src="logo/vscode.svg">
+<span>Visual Studio Code</span>
+</div>
 
-<li>XAMPP</li>
+<div class="stack-item">
+<img src="logo/xampp.svg">
+<span>XAMPP</span>
+</div>
 
-<li>GitHub</li>
-
-</ul>
+<div class="stack-item">
+<img src="logo/github.svg">
+<span>GitHub</span>
+</div>
 
 </div>
 
@@ -392,14 +526,60 @@ details.innerHTML = `
 </div>
 
 `;
+    }
+    currentImage = 0;
 
-}
     modal.style.display = "flex";
 
+    updateCarousel();
 }
 
-function closeProject(){
-
+function closeProject() {
     modal.style.display = "none";
+}
 
+// =======================
+// SAFETY FIRST CAROUSEL
+// =======================
+
+function updateCarousel() {
+    const image = document.getElementById("carouselImage");
+
+    if (!image) return;
+
+    image.src = currentImages[currentImage];
+
+    const dots = document.querySelectorAll(".dot");
+
+    dots.forEach((dot, index) => {
+        if (index === currentImage) {
+            dot.classList.add("active");
+        } else {
+            dot.classList.remove("active");
+        }
+    });
+}
+
+function nextImage(event) {
+    event.stopPropagation();
+
+    currentImage++;
+
+    if (currentImage >= currentImages.length) {
+        currentImage = 0;
+    }
+
+    updateCarousel();
+}
+
+function prevImage(event) {
+    event.stopPropagation();
+
+    currentImage--;
+
+    if (currentImage < 0) {
+        currentImage = currentImages.length - 1;
+    }
+
+    updateCarousel();
 }
