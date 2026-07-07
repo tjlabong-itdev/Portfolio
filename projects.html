@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terrence James B. Labong | Projects</title>
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="project.css" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    />
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+</head>
+
+<body>
+
+<header>
+    <nav>
+
+        <div class="logo">
+            TJL 
+        </div>
+
+        <ul>
+
+            <li>
+                <span class="current-page">
+                    <i class="fa-solid fa-folder-open"></i>
+                    Projects
+                </span>
+            </li>
+
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+</header>
+
+<section class="projects-hero">
+
+    <h1>
+        <i class="fa-solid fa-folder-open"></i>
+        Projects
+    </h1>
+
+    <p>
+        A collection of my works including web systems,
+        educational games, and UI/UX designs.
+    </p>
+
+    <div class="projects-divider"></div>
+
+    <div class="search-box">
+
+    <i class="fa-solid fa-magnifying-glass"></i>
+
+    <input
+        type="text"
+        placeholder="Search projects...">
+</div>
+
+            <div class="projects-grid">
+                <div class="project-card" onclick="openProject('safety')">
+                    
+                        <img src="safety first/SF1.jpg" alt="Safety First">
+                    
+
+                    <div class="project-content">
+                        <h3>"Safety First" Adventure: An Educational 
+Game for Teaching Safety Rules
+</h3>
+
+                        <p>
+                            An interactive web-based educational game focused on
+                            Disaster Risk Reduction and Management (DRRM), First
+                            Aid, and Road Safety awareness.
+                        </p>
+
+                        <div class="project-tech">
+
+                            <div class="tech-item">
+                                <img src="logo/csharp.svg" alt="C#">
+                                <span>C#</span>
+                            </div>
+
+                            <div class="tech-item">
+                                <img src="logo/html.svg" alt="HTML">
+                                <span>HTML</span>
+                            </div>
+
+                            <div class="tech-item">
+                                <img src="logo/css.svg" alt="CSS">
+                                <span>CSS</span>
+                            </div>
+
+                            <div class="tech-item">
+                                <img src="logo/javascript.svg" alt="JavaScript">
+                                <span>JavaScript</span>
+                            </div>
+
+                            <div class="tech-item">
+                                <img src="logo/unity.svg" alt="Unity">
+                                <span>Unity</span>
+                            </div>
+
+                            <div class="tech-item">
+                                <img src="logo/playfab.svg" alt="PlayFab">
+                                <span>PlayFab</span>
+                            </div>
+
+                            <div class="tech-item">
+                                <img src="logo/vscode.svg" alt="Visual Studio Code">
+                                <span>Visual Studio Code</span>
+                            </div>
+
+                        </div>
+
+                        <a
+                            href="https://meyhoon1.itch.io/safety-first-adventure"target="_blank"class="project-link"
+                            
+                        >
+                        <i class="fa-solid fa-link"></i>
+                            Project Link→
+                        </a>
+                    </div>
+                </div>
+
+                <div class="project-card" onclick="openProject('equipment')">
+                    
+                        <img src="equipment mngt/EMS2.png" alt="Equipment Management System">
+
+                    <div class="project-content">
+                        <h3>Equipment Management System</h3>
+
+                        <p>
+                            A web-based inventory and asset management solution
+                            designed to track equipment efficiently and generate
+                            reports.
+                        </p>
+
+                        <div class="project-tech">
+                            <div class="tech-item">
+                                <img src="logo/html.svg" alt="HTML">
+                                <span>HTML</span>
+
+                            </div><div class="tech-item">
+                                <img src="logo/css.svg" alt="CSS">
+                                <span>CSS</span>
+
+                            </div><div class="tech-item">
+                                <img src="logo/javascript.svg" alt="JavaScript">
+                                <span>JavaScript</span>
+
+                            </div><div class="tech-item">
+                                <img src="logo/php.svg" alt="PHP">
+                                <span>PHP</span>
+                            </div>
+                            
+                            <div class="tech-item">
+                                <img src="logo/bootstrap.svg" alt="Bootstrap">
+                                <span>Bootstrap</span>
+                            </div>
+
+                            <div class="tech-item">
+                                <img src="logo/vscode.svg" alt="Visual Studio Code">
+                                <span>Visual Studio Code</span>
+                            </div>
+
+                            <div class="tech-item">
+                                <img src="logo/xampp.svg" alt="XAMPP">
+                                <span>XAMPP</span>
+                            </div>
+
+                            <div class="tech-item">
+                                <img src="logo/msql.svg" alt="Microsoft SQL">
+                                <span>Microsoft SQL</span>
+                            </div>
+                        
+                        
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</section>
+
+<div id="projectModal" class="project-modal">
+
+    <div class="project-modal-content">
+
+        <button class="close-modal" onclick="closeProject()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div id="projectDetails">
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="project.js"></script>
+
+</body>
+
+</html>
