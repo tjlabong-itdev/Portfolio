@@ -68,12 +68,15 @@
     <i class="fa-solid fa-magnifying-glass"></i>
 
     <input
-        type="text"
-        placeholder="Search projects...">
+    type="text"
+    id="searchInput"
+    placeholder="Search projects...">
 </div>
 
             <div class="projects-grid">
-                <div class="project-card" onclick="openProject('safety')">
+                <div class="project-card"
+     data-name="Safety First Adventure Educational Game DRRM Road Safety"
+     onclick="openProject('safety')">
                     
                         <img src="safety first/SF1.jpg" alt="Safety First">
                     
@@ -138,7 +141,9 @@ Game for Teaching Safety Rules
                     </div>
                 </div>
 
-                <div class="project-card" onclick="openProject('equipment')">
+                <div class="project-card"
+     data-name="Equipment Management System Inventory PHP MySQL Bootstrap"
+     onclick="openProject('equipment')">
                     
                         <img src="equipment mngt/EMS2.png" alt="Equipment Management System">
 

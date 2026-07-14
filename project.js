@@ -532,16 +532,17 @@ function openProject(projectName) {
     modal.style.display = "flex";
 
     updateCarousel();
+
+    document.querySelector(".project-modal-content").scrollTop = 0;
 }
 
 function closeProject() {
+
     modal.style.display = "none";
+
+    document.querySelector(".project-modal-content").scrollTop = 0;
+
 }
-
-// =======================
-// SAFETY FIRST CAROUSEL
-// =======================
-
 function updateCarousel() {
     const image = document.getElementById("carouselImage");
 
@@ -583,3 +584,47 @@ function prevImage(event) {
 
     updateCarousel();
 }
+document.addEventListener("keydown", function (event) {
+
+    if (event.key === "Escape") {
+
+        closeProject();
+
+    }
+
+});
+modal.addEventListener("click", function (event) {
+
+    if (event.target === modal) {
+
+        closeProject();
+
+    }
+
+});
+
+const searchInput = document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", function () {
+
+    const value = this.value.toLowerCase();
+
+    const cards = document.querySelectorAll(".project-card");
+
+    cards.forEach(card => {
+
+        const project = card.dataset.name.toLowerCase();
+
+        if (project.includes(value)) {
+
+            card.style.display = "";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+});
